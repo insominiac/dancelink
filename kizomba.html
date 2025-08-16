@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kizomba Dancing - DanceLink | The African Tango</title>
+    <meta name="description" content="Learn Kizomba dancing with DanceLink. Discover the smooth, grounded connection and deep musicality of this mesmerizing African dance.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='fg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%233b82f6'/%3E%3Cstop offset='50%25' style='stop-color:%238b5cf6'/%3E%3Cstop offset='100%25' style='stop-color:%23c084fc'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='14' fill='url(%23fg)' opacity='0.9'/%3E%3Cpath d='M 11,8 Q 10,8 10,10 L 10,22 Q 10,24 11,24 L 13,24 Q 18,24 20,20 Q 22,16 20,12 Q 18,8 13,8 Z' fill='white' opacity='0.95'/%3E%3C/svg%3E">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* DanceLink Consistent Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #2c2416;
+            --primary-gold: #d4a574;
+            --accent-rose: #c97064;
+            --kizomba-blue: #3b82f6;
+            --kizomba-purple: #8b5cf6;
+            --kizomba-light: #c084fc;
+            --neutral-light: #ffffff;
+            --neutral-gray: #6b5d54;
+            --shadow-soft: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --shadow-strong: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Raleway', 'Segoe UI', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--primary-dark);
+            background: var(--neutral-light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+
+        p {
+            font-family: 'Crimson Text', 'Georgia', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--neutral-gray);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--kizomba-blue), var(--kizomba-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--neutral-gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--kizomba-blue);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--kizomba-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(59,130,246,0.9), rgba(139,92,246,0.9)),
+                        url('https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?q=80&w=2070&auto=format&fit=crop') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(59,130,246,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139,92,246,0.3) 0%, transparent 50%);
+            animation: floatGradient 20s ease-in-out infinite;
+        }
+
+        @keyframes floatGradient {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--kizomba-light);
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+
+        .btn {
+            padding: 14px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 0.5rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--kizomba-blue);
+            border: 2px solid white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--kizomba-blue);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--kizomba-blue);
+        }
+
+        /* Origins Section */
+        .origins-section {
+            background: #f8f9fa;
+        }
+
+        .origins-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .origins-text h3 {
+            color: var(--kizomba-blue);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .origins-map {
+            position: relative;
+            background: linear-gradient(135deg, var(--kizomba-blue), var(--kizomba-purple));
+            border-radius: 15px;
+            padding: 2rem;
+            color: white;
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Evolution Section */
+        .evolution-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 3rem auto;
+        }
+
+        .evolution-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            align-items: center;
+        }
+
+        .evolution-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .evolution-item:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .evolution-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--kizomba-blue);
+        }
+
+        .evolution-card:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .evolution-year {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--kizomba-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .evolution-image {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(59,130,246,0.8), rgba(139,92,246,0.8)),
+                        var(--image-url) center/cover;
+        }
+
+        /* Styles Section */
+        .dance-styles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .style-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .style-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--kizomba-blue), var(--kizomba-purple));
+        }
+
+        .style-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .style-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.1));
+            text-align: center;
+        }
+
+        .style-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .style-body {
+            padding: 2rem;
+        }
+
+        .style-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Connection Section */
+        .connection-section {
+            background: linear-gradient(135deg, rgba(59,130,246,0.05), rgba(139,92,246,0.05));
+        }
+
+        .connection-principles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .principle-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .principle-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--kizomba-blue), var(--kizomba-purple));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .principle-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .principle-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--kizomba-blue), var(--kizomba-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        /* Music Section */
+        .music-section {
+            background: white;
+        }
+
+        .music-elements {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .rhythm-box {
+            background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.1));
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .rhythm-pattern {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .beat {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .beat:hover {
+            background: var(--kizomba-blue);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .artists-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .artist-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 3px solid var(--kizomba-purple);
+            transition: all 0.3s ease;
+        }
+
+        .artist-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* Classes Section */
+        .classes-section {
+            background: #f8f9fa;
+        }
+
+        .class-offerings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .class-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .class-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .class-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--kizomba-blue), var(--kizomba-purple));
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .class-level {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .class-body {
+            padding: 2rem;
+        }
+
+        .class-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .class-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .class-features li::before {
+            content: '🌙';
+            margin-right: 0.75rem;
+        }
+
+        .class-schedule {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--kizomba-blue), var(--kizomba-purple));
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-description {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .back-link {
+            color: var(--kizomba-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: white;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary-dark);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .origins-content,
+            .music-elements {
+                grid-template-columns: 1fr;
+            }
+
+            .evolution-item {
+                grid-template-columns: 1fr;
+                direction: ltr !important;
+            }
+
+            .evolution-item:nth-child(even) > * {
+                direction: ltr;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Special moon animation */
+        @keyframes moonGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59,130,246,0.5); }
+            50% { box-shadow: 0 0 40px rgba(139,92,246,0.8); }
+        }
+
+        .moon-glow {
+            animation: moonGlow 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="elegant-dance-website.html" class="logo">DanceLink</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="elegant-dance-website.html" class="nav-link">Home</a></li>
+                <li><a href="salsa.html" class="nav-link">Salsa</a></li>
+                <li><a href="bachata.html" class="nav-link">Bachata</a></li>
+                <li><a href="kizomba.html" class="nav-link" style="color: var(--kizomba-blue);">Kizomba</a></li>
+                <li><a href="elegant-dance-website.html#classes" class="nav-link">Classes</a></li>
+                <li><a href="elegant-dance-website.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">KIZOMBA</h1>
+            <p class="hero-subtitle">The African Tango</p>
+            <p class="hero-description">
+                Experience the mesmerizing connection of Kizomba, where subtle movements and deep musicality 
+                create an intimate dialogue between partners
+            </p>
+            <div>
+                <a href="#classes" class="btn btn-primary">Begin Your Journey</a>
+                <a href="#origins" class="btn btn-secondary">Explore Origins</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Origins Section -->
+    <section id="origins" class="section origins-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">African Roots</h2>
+                <p>The journey from Angola to the world</p>
+            </div>
+            
+            <div class="origins-content">
+                <div class="origins-text reveal">
+                    <h3>Born in Luanda</h3>
+                    <p>Kizomba emerged in Angola during the late 1970s and early 1980s, born from the fusion of traditional Angolan Semba with Caribbean Zouk music. The word "Kizomba" means "party" in Kimbundu, one of Angola's national languages.</p>
+                    
+                    <h3 style="margin-top: 2rem;">Cultural Heritage</h3>
+                    <p>More than just a dance, Kizomba represents the resilience and joy of Angolan culture. It emerged during a time of civil war, serving as a form of expression and unity for the Angolan people. The dance embodies the African philosophy of connection - between music, movement, and soul.</p>
+                </div>
+                
+                <div class="origins-map reveal moon-glow">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">The Kizomba Journey</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 1.5rem;">🇦🇴</span>
+                            <div>
+                                <strong>Angola</strong><br>
+                                <span style="opacity: 0.9; font-size: 0.9rem;">Birthplace (1970s-80s)</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 1.5rem;">🇨🇻</span>
+                            <div>
+                                <strong>Cape Verde</strong><br>
+                                <span style="opacity: 0.9; font-size: 0.9rem;">Early adoption (1980s)</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 1.5rem;">🇵🇹</span>
+                            <div>
+                                <strong>Portugal</strong><br>
+                                <span style="opacity: 0.9; font-size: 0.9rem;">European gateway (1990s)</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 1.5rem;">🌍</span>
+                            <div>
+                                <strong>Worldwide</strong><br>
+                                <span style="opacity: 0.9; font-size: 0.9rem;">Global phenomenon (2000s)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evolution Section -->
+    <section id="evolution" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Evolution & Styles</h2>
+                <p>How Kizomba has transformed and diversified</p>
+            </div>
+            
+            <div class="evolution-timeline">
+                <div class="evolution-item reveal">
+                    <div class="evolution-card">
+                        <div class="evolution-year">Traditional Kizomba</div>
+                        <h3>The Original Form</h3>
+                        <p>Characterized by smooth, grounded movements with a close embrace. The dance maintains a strong connection to its Semba roots, emphasizing the walking patterns and subtle hip movements that define authentic Angolan style.</p>
+                    </div>
+                    <div class="evolution-image" style="--image-url: url('https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?q=80&w=1200&auto=format&fit=crop')"></div>
+                </div>
+                
+                <div class="evolution-item reveal">
+                    <div class="evolution-card">
+                        <div class="evolution-year">Urban Kiz</div>
+                        <h3>The French Evolution</h3>
+                        <p>Developed in Paris in the late 2000s, Urban Kiz introduced a more upright posture, linear movements, and influences from hip-hop and R&B. This style emphasizes musical interpretation with breaks, isolations, and syncopated footwork.</p>
+                    </div>
+                    <div class="evolution-image" style="background: linear-gradient(135deg, rgba(59,130,246,0.8), rgba(139,92,246,0.8)); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white;">🌃</div>
+                </div>
+                
+                <div class="evolution-item reveal">
+                    <div class="evolution-card">
+                        <div class="evolution-year">Tarraxo/Tarraxinha</div>
+                        <h3>The Sensual Variant</h3>
+                        <p>An extremely slow and sensual style that focuses on body isolations and minimal footwork. Partners maintain an intimate connection while interpreting the music through subtle body movements and waves.</p>
+                    </div>
+                    <div class="evolution-image" style="background: linear-gradient(135deg, rgba(139,92,246,0.8), rgba(192,132,252,0.8)); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white;">🌊</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dance Styles Section -->
+    <section id="styles" class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Kizomba Family</h2>
+                <p>Explore the different expressions of this beautiful dance</p>
+            </div>
+            
+            <div class="dance-styles">
+                <div class="style-card reveal">
+                    <div class="style-header">
+                        <div class="style-icon">🌍</div>
+                        <h3 class="style-name">Traditional Kizomba</h3>
+                    </div>
+                    <div class="style-body">
+                        <p>The authentic Angolan style with circular movements and grounded connection</p>
+                        <ul style="list-style: none; padding: 1rem 0;">
+                            <li>✓ Smooth walking patterns</li>
+                            <li>✓ Circular movements (giros)</li>
+                            <li>✓ Saidas and retrocesso</li>
+                            <li>✓ Close chest-to-chest connection</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="style-card reveal">
+                    <div class="style-header">
+                        <div class="style-icon">🏙️</div>
+                        <h3 class="style-name">Urban Kiz</h3>
+                    </div>
+                    <div class="style-body">
+                        <p>Modern interpretation with urban music influences and dynamic movements</p>
+                        <ul style="list-style: none; padding: 1rem 0;">
+                            <li>✓ Linear movements</li>
+                            <li>✓ Musical breaks and hits</li>
+                            <li>✓ Footwork variations</li>
+                            <li>✓ Open and closed positions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="style-card reveal">
+                    <div class="style-header">
+                        <div class="style-icon">🎭</div>
+                        <h3 class="style-name">Semba</h3>
+                    </div>
+                    <div class="style-body">
+                        <p>The predecessor of Kizomba - faster, more energetic, and playful</p>
+                        <ul style="list-style: none; padding: 1rem 0;">
+                            <li>✓ Faster tempo</li>
+                            <li>✓ Playful movements</li>
+                            <li>✓ Tricks and show moves</li>
+                            <li>✓ Traditional African rhythms</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="style-card reveal">
+                    <div class="style-header">
+                        <div class="style-icon">🌙</div>
+                        <h3 class="style-name">Tarraxinha</h3>
+                    </div>
+                    <div class="style-body">
+                        <p>Ultra-slow and sensual style focusing on body isolation and connection</p>
+                        <ul style="list-style: none; padding: 1rem 0;">
+                            <li>✓ Minimal footwork</li>
+                            <li>✓ Body waves and isolations</li>
+                            <li>✓ Intense connection</li>
+                            <li>✓ Musical interpretation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connection Section -->
+    <section id="connection" class="section connection-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">The Art of Connection</h2>
+                <p>Master the principles that define Kizomba</p>
+            </div>
+            
+            <div class="connection-principles">
+                <div class="principle-card reveal">
+                    <div class="principle-icon">🤲</div>
+                    <h3>Ginga</h3>
+                    <p>The unique sway and rhythm that flows through every movement, creating the distinctive Kizomba feel</p>
+                </div>
+                
+                <div class="principle-card reveal">
+                    <div class="principle-icon">👥</div>
+                    <h3>Connection</h3>
+                    <p>Chest-to-chest embrace that allows partners to move as one, feeling every subtle lead and follow</p>
+                </div>
+                
+                <div class="principle-card reveal">
+                    <div class="principle-icon">🎵</div>
+                    <h3>Musicality</h3>
+                    <p>Deep understanding of the music's layers, from the bass line to the melody, expressed through movement</p>
+                </div>
+                
+                <div class="principle-card reveal">
+                    <div class="principle-icon">⚖️</div>
+                    <h3>Balance</h3>
+                    <p>Maintaining individual and shared balance while executing smooth, controlled movements</p>
+                </div>
+                
+                <div class="principle-card reveal">
+                    <div class="principle-icon">🌀</div>
+                    <h3>Flow</h3>
+                    <p>Continuous, fluid movement that never stops, even in the pauses and stillness</p>
+                </div>
+                
+                <div class="principle-card reveal">
+                    <div class="principle-icon">💫</div>
+                    <h3>Presence</h3>
+                    <p>Being fully present with your partner, the music, and the moment, creating magic in simplicity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="section music-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">The Sound of Kizomba</h2>
+                <p>Understanding the music that moves us</p>
+            </div>
+            
+            <div class="music-elements">
+                <div class="rhythm-box reveal">
+                    <h3 style="color: var(--kizomba-blue); margin-bottom: 1rem;">The Kizomba Beat</h3>
+                    <p>Kizomba music typically ranges from 60-80 BPM, creating a slow, sensual groove perfect for connection</p>
+                    <div class="rhythm-pattern">
+                        <div class="beat">
+                            <strong>1</strong><br>Step
+                        </div>
+                        <div class="beat">
+                            <strong>2</strong><br>Together
+                        </div>
+                        <div class="beat">
+                            <strong>3</strong><br>Step
+                        </div>
+                        <div class="beat">
+                            <strong>&</strong><br>Pause
+                        </div>
+                    </div>
+                    <p style="margin-top: 1.5rem; font-style: italic;">The beauty lies in what happens between the beats - the subtle weight transfers and body movements that create the flow.</p>
+                </div>
+                
+                <div class="reveal">
+                    <h3 style="color: var(--kizomba-blue); margin-bottom: 1rem;">Essential Artists</h3>
+                    <div class="artists-grid">
+                        <div class="artist-item">
+                            <strong>Eduardo Paim</strong>
+                            <p style="font-size: 0.9rem; margin: 0;">The father of Kizomba</p>
+                        </div>
+                        <div class="artist-item">
+                            <strong>Paulo Flores</strong>
+                            <p style="font-size: 0.9rem; margin: 0;">Traditional master</p>
+                        </div>
+                        <div class="artist-item">
+                            <strong>C4 Pedro</strong>
+                            <p style="font-size: 0.9rem; margin: 0;">Modern Kizomba star</p>
+                        </div>
+                        <div class="artist-item">
+                            <strong>Nelson Freitas</strong>
+                            <p style="font-size: 0.9rem; margin: 0;">Urban Kiz influence</p>
+                        </div>
+                        <div class="artist-item">
+                            <strong>Anselmo Ralph</strong>
+                            <p style="font-size: 0.9rem; margin: 0;">Romantic melodies</p>
+                        </div>
+                        <div class="artist-item">
+                            <strong>Mika Mendes</strong>
+                            <p style="font-size: 0.9rem; margin: 0;">Cape Verdean fusion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.1)); padding: 2rem; border-radius: 15px;">
+                <h3 style="text-align: center; color: var(--kizomba-blue); margin-bottom: 1.5rem;">Musical Elements</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div style="text-align: center; padding: 1rem; background: white; border-radius: 10px;">
+                        <strong>Vocals</strong><br>Portuguese & Creole lyrics telling stories of love
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: white; border-radius: 10px;">
+                        <strong>Bass</strong><br>Deep, resonant foundation that guides the dance
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: white; border-radius: 10px;">
+                        <strong>Percussion</strong><br>Subtle African rhythms that add texture
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: white; border-radius: 10px;">
+                        <strong>Synthesizers</strong><br>Modern electronic elements in Urban Kiz
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="section classes-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Kizomba Classes</h2>
+                <p>Find your path in the world of Kizomba</p>
+            </div>
+            
+            <div class="class-offerings">
+                <div class="class-card reveal">
+                    <div class="class-header">
+                        <span class="class-level">Beginner</span>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Foundation</h3>
+                        <p style="opacity: 0.9;">Start your Kizomba journey</p>
+                    </div>
+                    <div class="class-body">
+                        <p style="margin-bottom: 1.5rem;">Learn the fundamentals of connection, basic steps, and musicality</p>
+                        <ul class="class-features">
+                            <li>Basic step patterns</li>
+                            <li>Connection principles</li>
+                            <li>Walking techniques</li>
+                            <li>Simple saidas</li>
+                            <li>Music recognition</li>
+                        </ul>
+                        <div class="class-schedule">
+                            <p style="font-weight: 600; color: var(--kizomba-blue);">8 weeks program</p>
+                            <p>Mondays 7-8:30 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="class-card reveal">
+                    <div class="class-header">
+                        <span class="class-level">Intermediate</span>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Evolution</h3>
+                        <p style="opacity: 0.9;">Expand your vocabulary</p>
+                    </div>
+                    <div class="class-body">
+                        <p style="margin-bottom: 1.5rem;">Develop your style with advanced patterns and musical interpretation</p>
+                        <ul class="class-features">
+                            <li>Complex saidas</li>
+                            <li>Virgula and estrela</li>
+                            <li>Musical interpretation</li>
+                            <li>Urban Kiz basics</li>
+                            <li>Leading/following refinement</li>
+                        </ul>
+                        <div class="class-schedule">
+                            <p style="font-weight: 600; color: var(--kizomba-blue);">10 weeks program</p>
+                            <p>Wednesdays 7:30-9 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="class-card reveal">
+                    <div class="class-header">
+                        <span class="class-level">Advanced</span>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Mastery</h3>
+                        <p style="opacity: 0.9;">Perfect your art</p>
+                    </div>
+                    <div class="class-body">
+                        <p style="margin-bottom: 1.5rem;">Master all styles and develop your unique expression</p>
+                        <ul class="class-features">
+                            <li>Style fusion</li>
+                            <li>Advanced musicality</li>
+                            <li>Improvisation</li>
+                            <li>Tarraxinha techniques</li>
+                            <li>Performance skills</li>
+                        </ul>
+                        <div class="class-schedule">
+                            <p style="font-weight: 600; color: var(--kizomba-blue);">Ongoing program</p>
+                            <p>Fridays 8-10 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <h3 style="color: var(--kizomba-blue); margin-bottom: 1.5rem;">Special Programs</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; max-width: 900px; margin: 0 auto;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: var(--shadow-soft);">
+                        <strong>Urban Kiz Intensive</strong><br>
+                        <span style="font-size: 0.9rem;">Master the modern style</span>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: var(--shadow-soft);">
+                        <strong>Semba Workshops</strong><br>
+                        <span style="font-size: 0.9rem;">Explore the roots</span>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: var(--shadow-soft);">
+                        <strong>Ladies & Men's Styling</strong><br>
+                        <span style="font-size: 0.9rem;">Enhance your expression</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Feel the Connection</h2>
+            <p class="cta-description">Join our Kizomba family and discover the magic of moving as one</p>
+            <div style="position: relative; z-index: 1;">
+                <a href="elegant-dance-website.html#contact" class="btn btn-primary">Start Your Journey</a>
+                <a href="elegant-dance-website.html#classes" class="btn btn-secondary">View All Classes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 DanceLink. All rights reserved.</p>
+            <p style="margin-top: 1rem;">
+                <a href="elegant-dance-website.html" class="back-link">← Back to Main Site</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Scroll reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+        
+        function checkReveal() {
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkReveal);
+        checkReveal();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

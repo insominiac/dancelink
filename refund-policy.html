@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Policy | DanceLink</title>
+    <meta name="description" content="DanceLink Refund Policy - Learn about our refund terms, cancellation policies, and payment procedures for classes, events, and subscriptions.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #2c2416;
+            --primary-gold: #d4a574;
+            --accent-rose: #c97064;
+            --neutral-light: #f8f9fa;
+            --neutral-gray: #6b5d54;
+            --white: #ffffff;
+            --shadow-soft: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --success-green: #4CAF50;
+            --warning-yellow: #FF9800;
+            --error-red: #f44336;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Crimson Text', 'Georgia', serif;
+            line-height: 1.8;
+            color: var(--primary-dark);
+            background: var(--white);
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-soft);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .back-link {
+            font-family: 'Raleway', sans-serif;
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link:hover {
+            color: var(--accent-rose);
+        }
+
+        /* Header */
+        .page-header {
+            margin-top: 100px;
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--neutral-light) 0%, rgba(201, 112, 100, 0.1) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--accent-rose), transparent);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .last-updated {
+            font-family: 'Raleway', sans-serif;
+            color: var(--neutral-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-rose);
+            font-weight: 600;
+        }
+
+        .subsection-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            color: var(--neutral-gray);
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+            color: var(--neutral-gray);
+        }
+
+        /* Policy Cards */
+        .policy-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .policy-card:hover {
+            box-shadow: var(--shadow-medium);
+            transform: translateY(-2px);
+        }
+
+        .policy-card h3 {
+            font-family: 'Raleway', sans-serif;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .policy-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Status Badges */
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            font-family: 'Raleway', sans-serif;
+            margin-right: 0.5rem;
+        }
+
+        .badge-refundable {
+            background: rgba(76, 175, 80, 0.1);
+            color: var(--success-green);
+        }
+
+        .badge-partial {
+            background: rgba(255, 152, 0, 0.1);
+            color: var(--warning-yellow);
+        }
+
+        .badge-non-refundable {
+            background: rgba(244, 67, 54, 0.1);
+            color: var(--error-red);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-gold);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.25rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--primary-gold);
+        }
+
+        .timeline-title {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Important Box */
+        .important-box {
+            background: linear-gradient(135deg, rgba(201, 112, 100, 0.1), rgba(212, 165, 116, 0.1));
+            border-left: 4px solid var(--accent-rose);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .important-box h3 {
+            font-family: 'Raleway', sans-serif;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Table */
+        .refund-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .refund-table thead {
+            background: linear-gradient(135deg, var(--primary-gold), var(--accent-rose));
+            color: white;
+        }
+
+        .refund-table th,
+        .refund-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--neutral-light);
+        }
+
+        .refund-table th {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .refund-table tbody tr:hover {
+            background: var(--neutral-light);
+        }
+
+        .refund-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: linear-gradient(135deg, var(--accent-rose), var(--primary-gold));
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-box p {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .contact-box a {
+            color: var(--white);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-rose);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .page-header {
+                margin-top: 80px;
+                padding: 40px 0;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .content-section {
+                padding: 40px 0;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .refund-table {
+                font-size: 0.9rem;
+            }
+
+            .refund-table th,
+            .refund-table td {
+                padding: 0.75rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="elegant-dance-website.html" class="logo">DanceLink</a>
+            <a href="elegant-dance-website.html" class="back-link">
+                <span>←</span> Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Refund & Payment Policy</h1>
+            <p class="last-updated">Effective Date: December 15, 2024</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content-section">
+        <div class="container">
+            <!-- Introduction -->
+            <section>
+                <p style="font-size: 1.2rem; color: var(--primary-dark); margin-bottom: 2rem;">
+                    At DanceLink, we strive to provide exceptional dance education and experiences. We understand that sometimes plans change, and we've designed our refund policy to be fair and transparent while ensuring the sustainability of our programs.
+                </p>
+            </section>
+
+            <!-- Quick Reference Table -->
+            <section>
+                <h2 class="section-title">Quick Reference Guide</h2>
+                <table class="refund-table">
+                    <thead>
+                        <tr>
+                            <th>Service Type</th>
+                            <th>Cancellation Period</th>
+                            <th>Refund Amount</th>
+                            <th>Credit Option</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Single Classes</strong></td>
+                            <td>24+ hours before</td>
+                            <td><span class="status-badge badge-refundable">100% Refund</span></td>
+                            <td>Yes - Valid 6 months</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Class Packages</strong></td>
+                            <td>48+ hours before first class</td>
+                            <td><span class="status-badge badge-refundable">100% Refund</span></td>
+                            <td>Yes - Valid 12 months</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Workshops</strong></td>
+                            <td>7+ days before</td>
+                            <td><span class="status-badge badge-refundable">100% Refund</span></td>
+                            <td>Yes - Valid 6 months</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Events/Socials</strong></td>
+                            <td>72+ hours before</td>
+                            <td><span class="status-badge badge-partial">75% Refund</span></td>
+                            <td>Yes - 100% Credit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Competitions</strong></td>
+                            <td>14+ days before</td>
+                            <td><span class="status-badge badge-partial">50% Refund</span></td>
+                            <td>Yes - 75% Credit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Private Lessons</strong></td>
+                            <td>48+ hours before</td>
+                            <td><span class="status-badge badge-refundable">100% Refund</span></td>
+                            <td>Yes - Reschedule anytime</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subscriptions</strong></td>
+                            <td>Before renewal date</td>
+                            <td><span class="status-badge badge-non-refundable">No Refund</span></td>
+                            <td>Pause available</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Detailed Policies -->
+            <section>
+                <h2 class="section-title">Detailed Refund Policies</h2>
+                
+                <!-- Classes and Packages -->
+                <div class="policy-card">
+                    <h3><span class="policy-icon">🎯</span> Classes and Packages</h3>
+                    
+                    <h4 class="subsection-title">Single Classes</h4>
+                    <ul>
+                        <li>Full refund if cancelled at least 24 hours before class start time</li>
+                        <li>50% refund if cancelled 12-24 hours before class</li>
+                        <li>No refund for cancellations less than 12 hours before class</li>
+                        <li>Option to transfer to another class within 30 days</li>
+                    </ul>
+                    
+                    <h4 class="subsection-title">Class Packages (5, 10, or 20 classes)</h4>
+                    <ul>
+                        <li>Full refund if no classes have been attended and cancellation is made within 14 days of purchase</li>
+                        <li>Pro-rated refund minus 20% administrative fee after first class</li>
+                        <li>No refunds after attending 3 or more classes</li>
+                        <li>Packages are valid for 6 months from purchase date</li>
+                        <li>One-time package freeze available for up to 30 days</li>
+                    </ul>
+                    
+                    <div class="important-box">
+                        <h3>Package Transfer Policy</h3>
+                        <p>Class packages can be transferred to another person once during the validity period with a $25 transfer fee.</p>
+                    </div>
+                </div>
+
+                <!-- Workshops and Intensives -->
+                <div class="policy-card">
+                    <h3><span class="policy-icon">🎓</span> Workshops and Intensives</h3>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-title">14+ days before</div>
+                            <p>100% refund or credit towards future workshop</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-title">7-13 days before</div>
+                            <p>75% refund or 100% credit towards future workshop</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-title">3-6 days before</div>
+                            <p>50% refund or 75% credit towards future workshop</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-title">Less than 3 days</div>
+                            <p>No refund, but 50% credit if space can be filled</p>
+                        </div>
+                    </div>
+                    
+                    <p><strong>Note:</strong> For multi-day intensives, partial attendance does not qualify for partial refunds.</p>
+                </div>
+
+                <!-- Events and Competitions -->
+                <div class="policy-card">
+                    <h3><span class="policy-icon">🏆</span> Events and Competitions</h3>
+                    
+                    <h4 class="subsection-title">Social Dance Events</h4>
+                    <ul>
+                        <li>Full refund if cancelled 72+ hours before event</li>
+                        <li>50% refund if cancelled 24-72 hours before</li>
+                        <li>No refund within 24 hours of event</li>
+                        <li>Tickets are transferable to another person</li>
+                    </ul>
+                    
+                    <h4 class="subsection-title">Competitions and Congresses</h4>
+                    <ul>
+                        <li>Registration fees are non-refundable after 14 days before event</li>
+                        <li>Partner substitutions allowed with $25 administrative fee</li>
+                        <li>Category changes permitted until 7 days before event</li>
+                        <li>Medical emergencies considered on case-by-case basis with documentation</li>
+                    </ul>
+                </div>
+
+                <!-- Private Lessons -->
+                <div class="policy-card">
+                    <h3><span class="policy-icon">👤</span> Private Lessons</h3>
+                    
+                    <h4 class="subsection-title">Cancellation Policy</h4>
+                    <ul>
+                        <li>Free cancellation or rescheduling 48+ hours before lesson</li>
+                        <li>One-time emergency cancellation allowed with less than 48 hours notice per month</li>
+                        <li>No-shows forfeit the lesson fee</li>
+                        <li>Instructor cancellations result in full refund or free makeup lesson</li>
+                    </ul>
+                    
+                    <h4 class="subsection-title">Lesson Packages</h4>
+                    <ul>
+                        <li>5-lesson packages: Valid for 3 months</li>
+                        <li>10-lesson packages: Valid for 6 months</li>
+                        <li>Unused lessons expire and are non-refundable</li>
+                        <li>One package extension of 30 days available for $50</li>
+                    </ul>
+                </div>
+
+                <!-- Subscriptions -->
+                <div class="policy-card">
+                    <h3><span class="policy-icon">🔄</span> Membership Subscriptions</h3>
+                    
+                    <h4 class="subsection-title">Monthly Subscriptions</h4>
+                    <ul>
+                        <li>Cancel anytime before next billing cycle</li>
+                        <li>No partial month refunds</li>
+                        <li>Pause subscription for up to 3 months per year</li>
+                        <li>Downgrade or upgrade anytime, effective next billing cycle</li>
+                    </ul>
+                    
+                    <h4 class="subsection-title">Annual Subscriptions</h4>
+                    <ul>
+                        <li>30-day money-back guarantee from purchase date</li>
+                        <li>After 30 days, no refunds available</li>
+                        <li>One-time pause for up to 2 months</li>
+                        <li>Transfer to monthly plan with price adjustment</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Payment Methods -->
+            <section>
+                <h2 class="section-title">Payment Methods & Security</h2>
+                
+                <div class="policy-card">
+                    <h3><span class="policy-icon">💳</span> Accepted Payment Methods</h3>
+                    <ul>
+                        <li>Credit Cards (Visa, MasterCard, American Express, Discover)</li>
+                        <li>Debit Cards with Visa/MasterCard logo</li>
+                        <li>PayPal and PayPal Credit</li>
+                        <li>Apple Pay and Google Pay</li>
+                        <li>Venmo (for in-person transactions)</li>
+                        <li>Bank transfers (for packages over $500)</li>
+                        <li>Payment plans available for programs over $300</li>
+                    </ul>
+                    
+                    <h4 class="subsection-title">Payment Security</h4>
+                    <p>All payments are processed through secure, PCI-compliant payment processors. We never store your full credit card information on our servers.</p>
+                </div>
+            </section>
+
+            <!-- Special Circumstances -->
+            <section>
+                <h2 class="section-title">Special Circumstances</h2>
+                
+                <div class="policy-card">
+                    <h3><span class="policy-icon">🏥</span> Medical Emergencies</h3>
+                    <p>We understand that medical emergencies happen. With proper documentation:</p>
+                    <ul>
+                        <li>Full refund for single classes and events</li>
+                        <li>Pro-rated refund for packages and subscriptions</li>
+                        <li>Extended validity period for prepaid services</li>
+                        <li>Documentation must be provided within 7 days</li>
+                    </ul>
+                </div>
+                
+                <div class="policy-card">
+                    <h3><span class="policy-icon">🌍</span> Force Majeure</h3>
+                    <p>In cases of natural disasters, pandemics, or government-mandated closures:</p>
+                    <ul>
+                        <li>Services will be suspended, not cancelled</li>
+                        <li>Online alternatives offered where possible</li>
+                        <li>Automatic extension of all packages and subscriptions</li>
+                        <li>Option for credit or refund if closure exceeds 30 days</li>
+                    </ul>
+                </div>
+                
+                <div class="policy-card">
+                    <h3><span class="policy-icon">✈️</span> Travel and Relocation</h3>
+                    <p>If you're relocating or traveling:</p>
+                    <ul>
+                        <li>Packages can be frozen for up to 3 months with proof of travel</li>
+                        <li>Subscriptions can be paused or cancelled</li>
+                        <li>Transfer to online classes available</li>
+                        <li>Partner studio credits in select cities</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- How to Request a Refund -->
+            <section>
+                <h2 class="section-title">How to Request a Refund</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-title">Step 1: Submit Request</div>
+                        <p>Email refunds@dancelink.com with your order number and reason for refund</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Step 2: Review Process</div>
+                        <p>Our team will review your request within 2 business days</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Step 3: Confirmation</div>
+                        <p>You'll receive an email confirming approval or requesting additional information</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Step 4: Processing</div>
+                        <p>Approved refunds are processed within 5-7 business days</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Step 5: Receipt</div>
+                        <p>Funds appear in your account within 3-5 business days after processing</p>
+                    </div>
+                </div>
+                
+                <div class="important-box">
+                    <h3>Required Information for Refund Requests</h3>
+                    <ul style="margin-bottom: 0;">
+                        <li>Full name and email used for purchase</li>
+                        <li>Order/Transaction number</li>
+                        <li>Date of purchase</li>
+                        <li>Reason for refund request</li>
+                        <li>Supporting documentation (if applicable)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Terms and Conditions -->
+            <section>
+                <h2 class="section-title">Additional Terms</h2>
+                
+                <h3 class="subsection-title">Currency and Taxes</h3>
+                <ul>
+                    <li>All prices are in USD unless otherwise specified</li>
+                    <li>Applicable taxes will be added at checkout</li>
+                    <li>International customers responsible for currency conversion fees</li>
+                    <li>Tax-exempt organizations must provide documentation</li>
+                </ul>
+                
+                <h3 class="subsection-title">Disputes and Chargebacks</h3>
+                <ul>
+                    <li>Please contact us before initiating a chargeback</li>
+                    <li>Unwarranted chargebacks may result in account suspension</li>
+                    <li>We reserve the right to collect on disputed amounts</li>
+                    <li>Legal fees may be added to unresolved disputes</li>
+                </ul>
+                
+                <h3 class="subsection-title">Policy Updates</h3>
+                <p>This refund policy may be updated periodically. Significant changes will be communicated via email. The policy in effect at the time of purchase applies to that transaction.</p>
+            </section>
+
+            <!-- Contact Section -->
+            <div class="contact-box">
+                <h3>Need Help with a Refund?</h3>
+                <p>Our customer service team is here to help you with any questions about our refund policy or to process your refund request.</p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:refunds@dancelink.com">refunds@dancelink.com</a><br>
+                    <strong>Phone:</strong> +1 (555) 123-4567<br>
+                    <strong>Hours:</strong> Monday - Friday, 9:00 AM - 6:00 PM EST<br>
+                    <strong>Response Time:</strong> Within 24-48 hours
+                </p>
+                <p style="margin-top: 1.5rem; font-size: 0.95rem;">
+                    For fastest service, please include your order number in all communications.
+                </p>
+            </div>
+
+            <!-- Final Note -->
+            <div class="important-box" style="margin-top: 3rem;">
+                <h3>Our Commitment to You</h3>
+                <p>At DanceLink, we believe in fair and transparent business practices. While we have policies in place to protect our business and instructors, we always strive to work with our students to find mutually beneficial solutions. If you have special circumstances not covered in this policy, please don't hesitate to reach out to us.</p>
+                <p style="margin-bottom: 0;"><strong>Thank you for choosing DanceLink for your dance journey!</strong></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="elegant-dance-website.html">Home</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="refund-policy.html">Refund Policy</a>
+            </div>
+            <p>© 2024 DanceLink. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

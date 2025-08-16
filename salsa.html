@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salsa Dancing - DanceLink | Master the Fire of Latin Dance</title>
+    <meta name="description" content="Learn Salsa dancing with DanceLink. Discover the explosive energy, intricate footwork, and vibrant culture of this iconic Latin dance style.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='fg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ff6b6b'/%3E%3Cstop offset='50%25' style='stop-color:%23ff8e53'/%3E%3Cstop offset='100%25' style='stop-color:%23ffa07a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='14' fill='url(%23fg)' opacity='0.9'/%3E%3Cpath d='M 11,8 Q 10,8 10,10 L 10,22 Q 10,24 11,24 L 13,24 Q 18,24 20,20 Q 22,16 20,12 Q 18,8 13,8 Z' fill='white' opacity='0.95'/%3E%3C/svg%3E">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* DanceLink Consistent Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #2c2416;
+            --primary-gold: #d4a574;
+            --accent-rose: #c97064;
+            --salsa-red: #ff6b6b;
+            --salsa-orange: #ff8e53;
+            --salsa-coral: #ffa07a;
+            --neutral-light: #ffffff;
+            --neutral-gray: #6b5d54;
+            --shadow-soft: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --shadow-strong: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Raleway', 'Segoe UI', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--primary-dark);
+            background: var(--neutral-light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+
+        p {
+            font-family: 'Crimson Text', 'Georgia', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--neutral-gray);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--salsa-red), var(--salsa-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--neutral-gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--salsa-red);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--salsa-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(255,107,107,0.9), rgba(255,142,83,0.9)),
+                        url('https://images.unsplash.com/photo-1545959570-a94084071b76?q=80&w=2070&auto=format&fit=crop') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--salsa-coral);
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+
+        .btn {
+            padding: 14px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 0.5rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--salsa-red);
+            border: 2px solid white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--salsa-red);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--salsa-red);
+        }
+
+        /* History Section */
+        .history-section {
+            background: #f8f9fa;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--salsa-orange);
+        }
+
+        .timeline-item {
+            padding: 2rem;
+            position: relative;
+            width: 50%;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+            padding-right: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 3rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--salsa-red);
+            border-radius: 50%;
+            top: 2rem;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--salsa-orange);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--salsa-red);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Styles Section */
+        .styles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .style-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .style-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .style-card-header {
+            height: 200px;
+            background: linear-gradient(135deg, var(--salsa-red), var(--salsa-orange));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .style-card-body {
+            padding: 2rem;
+        }
+
+        .style-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        /* Techniques Section */
+        .techniques-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .technique-box {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .technique-box:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .technique-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--salsa-red), var(--salsa-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Music Section */
+        .music-section {
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,142,83,0.1));
+        }
+
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .music-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .music-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Classes Section */
+        .classes-section {
+            background: white;
+        }
+
+        .class-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .level-card {
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .level-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+        }
+
+        .level-beginner {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(129, 199, 132, 0.1));
+        }
+
+        .level-beginner::before {
+            background: linear-gradient(90deg, #4caf50, #81c784);
+        }
+
+        .level-intermediate {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 213, 79, 0.1));
+        }
+
+        .level-intermediate::before {
+            background: linear-gradient(90deg, #ffc107, #ffd54f);
+        }
+
+        .level-advanced {
+            background: linear-gradient(135deg, rgba(244, 67, 54, 0.1), rgba(239, 83, 80, 0.1));
+        }
+
+        .level-advanced::before {
+            background: linear-gradient(90deg, #f44336, #ef5350);
+        }
+
+        .level-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .level-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .level-features {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .level-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .level-features li::before {
+            content: '✓';
+            color: var(--salsa-red);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--salsa-red), var(--salsa-orange));
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .back-link {
+            color: var(--salsa-coral);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: white;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary-dark);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 60px !important;
+                padding-right: 20px !important;
+                text-align: left !important;
+            }
+
+            .timeline-dot {
+                left: 20px !important;
+                right: auto !important;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="elegant-dance-website.html" class="logo">DanceLink</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="elegant-dance-website.html" class="nav-link">Home</a></li>
+                <li><a href="salsa.html" class="nav-link" style="color: var(--salsa-red);">Salsa</a></li>
+                <li><a href="bachata.html" class="nav-link">Bachata</a></li>
+                <li><a href="kizomba.html" class="nav-link">Kizomba</a></li>
+                <li><a href="elegant-dance-website.html#classes" class="nav-link">Classes</a></li>
+                <li><a href="elegant-dance-website.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">SALSA</h1>
+            <p class="hero-subtitle">The Fire of Latin Dance</p>
+            <p class="hero-description">
+                Experience the explosive energy, intricate footwork, and vibrant culture that makes Salsa 
+                the most celebrated Latin dance worldwide
+            </p>
+            <div>
+                <a href="#classes" class="btn btn-primary">Start Learning</a>
+                <a href="#history" class="btn btn-secondary">Discover More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="history" class="section history-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">The Evolution of Salsa</h2>
+                <p>From Cuban roots to global phenomenon</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">1920s-1940s</div>
+                        <h3>Cuban Origins</h3>
+                        <p>Born from the fusion of Son Cubano, Mambo, and Afro-Cuban rhythms in the streets of Havana</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">1960s-1970s</div>
+                        <h3>New York Evolution</h3>
+                        <p>Puerto Rican and Cuban immigrants in New York City transform the dance, creating the distinctive NY style</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">1980s-1990s</div>
+                        <h3>Global Expansion</h3>
+                        <p>Salsa spreads worldwide, with distinct regional styles emerging in Colombia, LA, and Europe</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2000s-Present</div>
+                        <h3>Modern Fusion</h3>
+                        <p>Contemporary Salsa incorporates elements from other dances while maintaining its authentic Latin soul</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Styles Section -->
+    <section id="styles" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Salsa Styles</h2>
+                <p>Each style tells a unique story through rhythm and movement</p>
+            </div>
+            
+            <div class="styles-grid">
+                <div class="style-card reveal">
+                    <div class="style-card-header">🎭</div>
+                    <div class="style-card-body">
+                        <h3 class="style-name">LA Style (On1)</h3>
+                        <p>Linear and flashy, characterized by dramatic dips, tricks, and acrobatic moves. Perfect for performance and showcases.</p>
+                        <ul style="list-style: none; padding: 1rem 0;">
+                            <li>✓ Cross-body leads</li>
+                            <li>✓ Linear slot dancing</li>
+                            <li>✓ Theatrical elements</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="style-card reveal">
+                    <div class="style-card-header">🗽</div>
+                    <div class="style-card-body">
+                        <h3 class="style-name">NY Style (On2)</h3>
+                        <p>Smooth and sophisticated, dancing "on 2" creates a unique feel with emphasis on musicality and elegance.</p>
+                        <ul style="list-style: none; padding: 1rem 0;">
+                            <li>✓ Breaking on 2</li>
+                            <li>✓ Smooth transitions</li>
+                            <li>✓ Musical interpretation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="style-card reveal">
+                    <div class="style-card-header">🏝️</div>
+                    <div class="style-card-body">
+                        <h3 class="style-name">Cuban Style (Casino)</h3>
+                        <p>Circular and playful, featuring complex turn patterns and the famous Rueda de Casino group dancing.</p>
+                        <ul style="list-style: none; padding: 1rem 0;">
+                            <li>✓ Circular movements</li>
+                            <li>✓ Rueda formations</li>
+                            <li>✓ Afro-Cuban body movement</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="style-card reveal">
+                    <div class="style-card-header">🌎</div>
+                    <div class="style-card-body">
+                        <h3 class="style-name">Colombian Style (Cali)</h3>
+                        <p>Fast-paced and energetic, known for rapid footwork, quick spins, and athletic movements.</p>
+                        <ul style="list-style: none; padding: 1rem 0;">
+                            <li>✓ Lightning-fast footwork</li>
+                            <li>✓ Minimal upper body movement</li>
+                            <li>✓ High energy patterns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Techniques Section -->
+    <section id="techniques" class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Essential Techniques</h2>
+                <p>Master these fundamentals to excel in Salsa</p>
+            </div>
+            
+            <div class="techniques-container">
+                <div class="technique-box reveal">
+                    <div class="technique-icon">👣</div>
+                    <h3>Basic Steps</h3>
+                    <p>Forward-back basic, side basic, cumbia step, and suzie-q form the foundation of all Salsa movements</p>
+                </div>
+                
+                <div class="technique-box reveal">
+                    <div class="technique-icon">🔄</div>
+                    <h3>Turns & Spins</h3>
+                    <p>Single, double, and multiple spins with proper spotting technique and balance control</p>
+                </div>
+                
+                <div class="technique-box reveal">
+                    <div class="technique-icon">🤝</div>
+                    <h3>Partner Work</h3>
+                    <p>Lead and follow techniques, frame maintenance, and connection through movement</p>
+                </div>
+                
+                <div class="technique-box reveal">
+                    <div class="technique-icon">✨</div>
+                    <h3>Shines</h3>
+                    <p>Solo footwork patterns that showcase individual style and musical interpretation</p>
+                </div>
+                
+                <div class="technique-box reveal">
+                    <div class="technique-icon">🎵</div>
+                    <h3>Musicality</h3>
+                    <p>Understanding clave, identifying instruments, and dancing to different parts of the music</p>
+                </div>
+                
+                <div class="technique-box reveal">
+                    <div class="technique-icon">💃</div>
+                    <h3>Body Movement</h3>
+                    <p>Hip motion, shoulder shimmies, and body isolations that add flavor to your dance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="section music-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">The Music</h2>
+                <p>Understanding Salsa rhythms and instruments</p>
+            </div>
+            
+            <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow-soft); margin-bottom: 2rem;">
+                <h3 style="color: var(--salsa-red); margin-bottom: 1rem;">The Clave - Heart of Salsa</h3>
+                <p>The clave is the rhythmic foundation of Salsa music. The two main patterns are:</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem;">
+                    <div style="padding: 1rem; background: rgba(255,107,107,0.1); border-radius: 10px;">
+                        <h4>2-3 Clave (Son)</h4>
+                        <p style="font-family: monospace; font-size: 1.2rem;">• • — • — • —</p>
+                    </div>
+                    <div style="padding: 1rem; background: rgba(255,142,83,0.1); border-radius: 10px;">
+                        <h4>3-2 Clave (Rumba)</h4>
+                        <p style="font-family: monospace; font-size: 1.2rem;">• — • — • • —</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-dark);">Key Instruments</h3>
+            <div class="music-grid">
+                <div class="music-item reveal">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🥁</div>
+                    <h4>Congas</h4>
+                    <p>Provide the fundamental rhythm</p>
+                </div>
+                <div class="music-item reveal">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎹</div>
+                    <h4>Piano</h4>
+                    <p>Creates melodic montunos</p>
+                </div>
+                <div class="music-item reveal">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎺</div>
+                    <h4>Brass Section</h4>
+                    <p>Adds power and energy</p>
+                </div>
+                <div class="music-item reveal">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎸</div>
+                    <h4>Bass</h4>
+                    <p>Drives the groove forward</p>
+                </div>
+                <div class="music-item reveal">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔔</div>
+                    <h4>Cowbell</h4>
+                    <p>Keeps steady time</p>
+                </div>
+                <div class="music-item reveal">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🥁</div>
+                    <h4>Timbales</h4>
+                    <p>Adds fills and breaks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="section classes-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Join Our Salsa Classes</h2>
+                <p>Find the perfect level to start or continue your Salsa journey</p>
+            </div>
+            
+            <div class="class-levels">
+                <div class="level-card level-beginner reveal">
+                    <h3 class="level-title">Beginner</h3>
+                    <p style="margin-bottom: 1.5rem;">Perfect for those taking their first steps into Salsa</p>
+                    <ul class="level-features">
+                        <li>Basic steps and rhythm</li>
+                        <li>Simple turn patterns</li>
+                        <li>Partner connection basics</li>
+                        <li>Music recognition</li>
+                        <li>Social dance etiquette</li>
+                    </ul>
+                    <div style="margin-top: 2rem;">
+                        <p style="font-weight: 600; color: var(--salsa-red);">8 weeks program</p>
+                        <p>Tuesdays & Thursdays 7-8 PM</p>
+                    </div>
+                </div>
+                
+                <div class="level-card level-intermediate reveal">
+                    <h3 class="level-title">Intermediate</h3>
+                    <p style="margin-bottom: 1.5rem;">Expand your repertoire and refine your technique</p>
+                    <ul class="level-features">
+                        <li>Complex turn patterns</li>
+                        <li>Multiple spins</li>
+                        <li>Advanced footwork</li>
+                        <li>Style variations</li>
+                        <li>Performance techniques</li>
+                    </ul>
+                    <div style="margin-top: 2rem;">
+                        <p style="font-weight: 600; color: #ffc107;">12 weeks program</p>
+                        <p>Mondays & Wednesdays 7-8:30 PM</p>
+                    </div>
+                </div>
+                
+                <div class="level-card level-advanced reveal">
+                    <h3 class="level-title">Advanced</h3>
+                    <p style="margin-bottom: 1.5rem;">Master complex patterns and develop your unique style</p>
+                    <ul class="level-features">
+                        <li>Advanced combinations</li>
+                        <li>Musicality mastery</li>
+                        <li>Improvisation skills</li>
+                        <li>Competition preparation</li>
+                        <li>Teaching methodology</li>
+                    </ul>
+                    <div style="margin-top: 2rem;">
+                        <p style="font-weight: 600; color: #f44336;">Ongoing program</p>
+                        <p>Fridays 7-9 PM & Sundays 3-5 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Feel the Fire?</h2>
+            <p class="cta-description">Join our vibrant Salsa community and discover the passion within you</p>
+            <div>
+                <a href="elegant-dance-website.html#contact" class="btn btn-primary">Book Your First Class</a>
+                <a href="elegant-dance-website.html#classes" class="btn btn-secondary">View Schedule</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 DanceLink. All rights reserved.</p>
+            <p style="margin-top: 1rem;">
+                <a href="elegant-dance-website.html" class="back-link">← Back to Main Site</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Scroll reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+        
+        function checkReveal() {
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkReveal);
+        checkReveal();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

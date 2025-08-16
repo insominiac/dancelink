@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bachata Dancing - DanceLink | Romance in Motion</title>
+    <meta name="description" content="Learn Bachata dancing with DanceLink. Experience the sensuality, connection, and romantic expression of this beautiful Dominican dance.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='fg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23a855f7'/%3E%3Cstop offset='50%25' style='stop-color:%23ec4899'/%3E%3Cstop offset='100%25' style='stop-color:%23f9a8d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='14' fill='url(%23fg)' opacity='0.9'/%3E%3Cpath d='M 11,8 Q 10,8 10,10 L 10,22 Q 10,24 11,24 L 13,24 Q 18,24 20,20 Q 22,16 20,12 Q 18,8 13,8 Z' fill='white' opacity='0.95'/%3E%3C/svg%3E">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* DanceLink Consistent Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #2c2416;
+            --primary-gold: #d4a574;
+            --accent-rose: #c97064;
+            --bachata-purple: #a855f7;
+            --bachata-pink: #ec4899;
+            --bachata-light: #f9a8d4;
+            --neutral-light: #ffffff;
+            --neutral-gray: #6b5d54;
+            --shadow-soft: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --shadow-strong: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Raleway', 'Segoe UI', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--primary-dark);
+            background: var(--neutral-light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+
+        p {
+            font-family: 'Crimson Text', 'Georgia', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--neutral-gray);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--bachata-purple), var(--bachata-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--neutral-gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--bachata-purple);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--bachata-purple);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(168,85,247,0.9), rgba(236,72,153,0.9)),
+                        url('https://images.unsplash.com/photo-1504609813442-a8924e83f76e?q=80&w=2070&auto=format&fit=crop') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--bachata-light);
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+
+        .btn {
+            padding: 14px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 0.5rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--bachata-purple);
+            border: 2px solid white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--bachata-purple);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--bachata-purple);
+        }
+
+        /* History Section */
+        .history-section {
+            background: #f8f9fa;
+        }
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .history-content h3 {
+            color: var(--bachata-purple);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .history-image {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .history-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Styles Section */
+        .styles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .style-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            border-top: 5px solid;
+        }
+
+        .style-card:nth-child(1) {
+            border-top-color: var(--bachata-purple);
+        }
+
+        .style-card:nth-child(2) {
+            border-top-color: var(--bachata-pink);
+        }
+
+        .style-card:nth-child(3) {
+            border-top-color: var(--bachata-light);
+        }
+
+        .style-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .style-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .style-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        /* Connection Section */
+        .connection-section {
+            background: linear-gradient(135deg, rgba(168,85,247,0.05), rgba(236,72,153,0.05));
+        }
+
+        .connection-elements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .connection-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .connection-card:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .connection-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--bachata-purple), var(--bachata-pink));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Music Section */
+        .music-section {
+            background: white;
+        }
+
+        .music-artists {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .artist-card {
+            background: linear-gradient(135deg, rgba(168,85,247,0.1), rgba(236,72,153,0.1));
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .artist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* Classes Section */
+        .classes-section {
+            background: #f8f9fa;
+        }
+
+        .program-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .program-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--bachata-purple), var(--bachata-pink));
+            color: white;
+            text-align: center;
+        }
+
+        .program-body {
+            padding: 2rem;
+        }
+
+        .program-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .program-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .program-features li::before {
+            content: '💕';
+            margin-right: 0.75rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--bachata-purple), var(--bachata-pink));
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .back-link {
+            color: var(--bachata-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: white;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary-dark);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .history-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Special Heart Animation */
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .heartbeat {
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="elegant-dance-website.html" class="logo">DanceLink</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="elegant-dance-website.html" class="nav-link">Home</a></li>
+                <li><a href="salsa.html" class="nav-link">Salsa</a></li>
+                <li><a href="bachata.html" class="nav-link" style="color: var(--bachata-purple);">Bachata</a></li>
+                <li><a href="kizomba.html" class="nav-link">Kizomba</a></li>
+                <li><a href="elegant-dance-website.html#classes" class="nav-link">Classes</a></li>
+                <li><a href="elegant-dance-website.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">BACHATA</h1>
+            <p class="hero-subtitle">Romance in Motion</p>
+            <p class="hero-description">
+                Discover the sensual world of Bachata, where every movement tells a story of connection, 
+                passion, and musical expression
+            </p>
+            <div>
+                <a href="#classes" class="btn btn-primary">Start Your Journey</a>
+                <a href="#history" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="history" class="section history-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">The Story of Bachata</h2>
+                <p>From Dominican roots to worldwide sensation</p>
+            </div>
+            
+            <div class="history-grid">
+                <div class="history-content reveal">
+                    <h3>Dominican Heritage</h3>
+                    <p>Born in the countryside of the Dominican Republic in the early 1960s, Bachata emerged from the margins of society. Initially considered music of the poor and rural communities, it was played in bars and brothels, telling stories of heartbreak, love, and everyday struggles.</p>
+                    
+                    <h3 style="margin-top: 2rem;">Musical Evolution</h3>
+                    <p>The term "Bachata" originally referred to informal gatherings where guitar music was played. The traditional instrumentation includes the requinto (lead guitar), segunda (rhythm guitar), bass, bongos, and güira. The music's melancholic lyrics and guitar-driven melodies created a unique sound that resonated with the working class.</p>
+                </div>
+                
+                <div class="history-image reveal">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop" alt="Bachata Musicians">
+                </div>
+            </div>
+            
+            <div class="history-grid" style="margin-top: 3rem;">
+                <div class="history-image reveal">
+                    <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?q=80&w=1200&auto=format&fit=crop" alt="Modern Bachata Dancing">
+                </div>
+                
+                <div class="history-content reveal">
+                    <h3>Modern Transformation</h3>
+                    <p>In the 1990s, artists like Juan Luis Guerra brought Bachata to the mainstream, elevating its status from barrio music to international phenomenon. The dance evolved from simple side-to-side steps to incorporate sensual body movements, intricate turn patterns, and influences from other dance styles.</p>
+                    
+                    <h3 style="margin-top: 2rem;">Global Expansion</h3>
+                    <p>Today, Bachata has evolved into multiple styles including Traditional, Modern, Sensual, and Urban. Each style brings its own flavor while maintaining the romantic essence that defines Bachata. From New York to Barcelona, Tokyo to Sydney, Bachata has captured hearts worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Styles Section -->
+    <section id="styles" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Bachata Styles</h2>
+                <p>Each style offers a unique way to express the music</p>
+            </div>
+            
+            <div class="styles-container">
+                <div class="style-card reveal">
+                    <div class="style-icon">🎸</div>
+                    <h3 class="style-name">Traditional (Dominican)</h3>
+                    <p>The original style featuring basic footwork, hip movements, and simple turns. Emphasizes the connection with traditional Bachata music and cultural roots.</p>
+                    <ul style="list-style: none; padding: 1rem 0;">
+                        <li>✓ Box steps and side-to-side movement</li>
+                        <li>✓ Hip taps and syncopations</li>
+                        <li>✓ Close embrace position</li>
+                        <li>✓ Footwork variations</li>
+                    </ul>
+                </div>
+                
+                <div class="style-card reveal">
+                    <div class="style-icon">💕</div>
+                    <h3 class="style-name">Sensual</h3>
+                    <p>Developed in Spain, this style emphasizes body isolation, waves, and dramatic musical interpretation with influences from contemporary dance.</p>
+                    <ul style="list-style: none; padding: 1rem 0;">
+                        <li>✓ Body waves and isolations</li>
+                        <li>✓ Head rolls and dips</li>
+                        <li>✓ Musical interpretation</li>
+                        <li>✓ Romantic connection</li>
+                    </ul>
+                </div>
+                
+                <div class="style-card reveal">
+                    <div class="style-icon">🌆</div>
+                    <h3 class="style-name">Urban/Modern</h3>
+                    <p>A fusion style incorporating elements from hip-hop, contemporary, and other urban dances, creating a more dynamic and versatile approach.</p>
+                    <ul style="list-style: none; padding: 1rem 0;">
+                        <li>✓ Urban flavor and attitude</li>
+                        <li>✓ Creative footwork patterns</li>
+                        <li>✓ Musical breaks and hits</li>
+                        <li>✓ Freestyle elements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connection Section -->
+    <section id="connection" class="section connection-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">The Art of Connection</h2>
+                <p>Master the elements that create magic between partners</p>
+            </div>
+            
+            <div class="connection-elements">
+                <div class="connection-card reveal">
+                    <div class="connection-icon">🤝</div>
+                    <h3>Lead & Follow</h3>
+                    <p>Develop clear communication through body language, creating a seamless dialogue between partners</p>
+                </div>
+                
+                <div class="connection-card reveal">
+                    <div class="connection-icon">🌊</div>
+                    <h3>Body Movement</h3>
+                    <p>Master waves, isolations, and hip movements that express the sensuality of the music</p>
+                </div>
+                
+                <div class="connection-card reveal">
+                    <div class="connection-icon">🎭</div>
+                    <h3>Musical Expression</h3>
+                    <p>Learn to interpret the music's emotion, using pauses, accents, and dynamics in your movement</p>
+                </div>
+                
+                <div class="connection-card reveal">
+                    <div class="connection-icon">💫</div>
+                    <h3>Chemistry</h3>
+                    <p>Build trust and connection that transforms technical movements into emotional expression</p>
+                </div>
+                
+                <div class="connection-card reveal">
+                    <div class="connection-icon">🎯</div>
+                    <h3>Frame & Posture</h3>
+                    <p>Maintain proper frame for clear leading and following while staying relaxed and natural</p>
+                </div>
+                
+                <div class="connection-card reveal">
+                    <div class="connection-icon heartbeat">❤️</div>
+                    <h3>Emotion</h3>
+                    <p>Connect with the romantic nature of Bachata, letting the music guide your expression</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="section music-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">The Music</h2>
+                <p>Understanding Bachata rhythms and artists</p>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, rgba(168,85,247,0.1), rgba(236,72,153,0.1)); padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
+                <h3 style="color: var(--bachata-purple); margin-bottom: 1rem; text-align: center;">The Bachata Beat</h3>
+                <p style="text-align: center; margin-bottom: 1.5rem;">Bachata music is in 4/4 time with a distinctive guitar pattern and rhythmic structure</p>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center;">
+                    <div style="background: white; padding: 1rem; border-radius: 10px;">
+                        <strong>1</strong><br>Step
+                    </div>
+                    <div style="background: white; padding: 1rem; border-radius: 10px;">
+                        <strong>2</strong><br>Step
+                    </div>
+                    <div style="background: white; padding: 1rem; border-radius: 10px;">
+                        <strong>3</strong><br>Step
+                    </div>
+                    <div style="background: white; padding: 1rem; border-radius: 10px;">
+                        <strong>4</strong><br>Tap/Hip
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-dark);">Legendary Artists</h3>
+            <div class="music-artists">
+                <div class="artist-card reveal">
+                    <h4>Romeo Santos</h4>
+                    <p style="font-size: 0.9rem;">The King of Bachata</p>
+                </div>
+                <div class="artist-card reveal">
+                    <h4>Prince Royce</h4>
+                    <p style="font-size: 0.9rem;">Modern romantic style</p>
+                </div>
+                <div class="artist-card reveal">
+                    <h4>Juan Luis Guerra</h4>
+                    <p style="font-size: 0.9rem;">Bachata pioneer</p>
+                </div>
+                <div class="artist-card reveal">
+                    <h4>Aventura</h4>
+                    <p style="font-size: 0.9rem;">Urban bachata legends</p>
+                </div>
+                <div class="artist-card reveal">
+                    <h4>Frank Reyes</h4>
+                    <p style="font-size: 0.9rem;">Traditional master</p>
+                </div>
+                <div class="artist-card reveal">
+                    <h4>Daniel Santacruz</h4>
+                    <p style="font-size: 0.9rem;">European influence</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <h3 style="color: var(--bachata-purple); margin-bottom: 1rem;">Song Structure</h3>
+                <p>Understanding Bachata song structure helps you dance musically:</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: var(--shadow-soft);">
+                        <strong>Intro</strong><br>Sets the mood
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: var(--shadow-soft);">
+                        <strong>Verse</strong><br>Tell the story
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: var(--shadow-soft);">
+                        <strong>Chorus</strong><br>Main emotion
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: var(--shadow-soft);">
+                        <strong>Bridge</strong><br>Musical break
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="section classes-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Bachata Programs</h2>
+                <p>Find your perfect learning path</p>
+            </div>
+            
+            <div class="program-cards">
+                <div class="program-card reveal">
+                    <div class="program-header">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Fundamentals</h3>
+                        <p style="opacity: 0.9;">Build your foundation</p>
+                    </div>
+                    <div class="program-body">
+                        <p style="margin-bottom: 1.5rem;">Perfect for beginners ready to discover the romantic world of Bachata</p>
+                        <ul class="program-features">
+                            <li>Basic steps and timing</li>
+                            <li>Partner connection basics</li>
+                            <li>Simple turn patterns</li>
+                            <li>Body movement introduction</li>
+                            <li>Music recognition</li>
+                        </ul>
+                        <div style="margin-top: 2rem; text-align: center;">
+                            <p style="font-weight: 600; color: var(--bachata-purple);">6 weeks program</p>
+                            <p>Wednesdays 7-8 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="program-card reveal">
+                    <div class="program-header">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Sensual Bachata</h3>
+                        <p style="opacity: 0.9;">Express with emotion</p>
+                    </div>
+                    <div class="program-body">
+                        <p style="margin-bottom: 1.5rem;">Explore the sensual style with body movement and musical interpretation</p>
+                        <ul class="program-features">
+                            <li>Body waves and isolations</li>
+                            <li>Head and body rolls</li>
+                            <li>Sensual combinations</li>
+                            <li>Musical interpretation</li>
+                            <li>Connection techniques</li>
+                        </ul>
+                        <div style="margin-top: 2rem; text-align: center;">
+                            <p style="font-weight: 600; color: var(--bachata-purple);">8 weeks program</p>
+                            <p>Thursdays 7:30-9 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="program-card reveal">
+                    <div class="program-header">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Advanced Fusion</h3>
+                        <p style="opacity: 0.9;">Master all styles</p>
+                    </div>
+                    <div class="program-body">
+                        <p style="margin-bottom: 1.5rem;">Combine traditional, sensual, and urban elements for complete mastery</p>
+                        <ul class="program-features">
+                            <li>Advanced combinations</li>
+                            <li>Style transitions</li>
+                            <li>Improvisation skills</li>
+                            <li>Performance preparation</li>
+                            <li>Choreography creation</li>
+                        </ul>
+                        <div style="margin-top: 2rem; text-align: center;">
+                            <p style="font-weight: 600; color: var(--bachata-purple);">Ongoing program</p>
+                            <p>Saturdays 4-6 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <h3 style="color: var(--bachata-purple); margin-bottom: 1rem;">Special Workshops</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; max-width: 800px; margin: 0 auto;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: var(--shadow-soft);">
+                        <strong>Ladies Styling</strong><br>
+                        <span style="font-size: 0.9rem;">Enhance your feminine expression</span>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: var(--shadow-soft);">
+                        <strong>Men's Leading</strong><br>
+                        <span style="font-size: 0.9rem;">Master clear communication</span>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: var(--shadow-soft);">
+                        <strong>Musicality</strong><br>
+                        <span style="font-size: 0.9rem;">Dance to the music's soul</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Feel the Romance</h2>
+            <p class="cta-description">Join our Bachata community and discover the beauty of connection through dance</p>
+            <div>
+                <a href="elegant-dance-website.html#contact" class="btn btn-primary">Start Dancing</a>
+                <a href="elegant-dance-website.html#classes" class="btn btn-secondary">View All Classes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 DanceLink. All rights reserved.</p>
+            <p style="margin-top: 1rem;">
+                <a href="elegant-dance-website.html" class="back-link">← Back to Main Site</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Scroll reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+        
+        function checkReveal() {
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkReveal);
+        checkReveal();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
